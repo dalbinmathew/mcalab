@@ -1,0 +1,30 @@
+body{
+background-color:#206DBD;
+}
+
+
+#h{
+width:100%;
+height:40px;
+background-color:#264B8D;
+color:lightblue;
+}
+
+
+.b{
+width:250px;
+height:100%;
+background-color:#264B8D;
+color:lightblue;
+}
+
+.c {
+  position: absolute;
+  top: 373px;
+  right: 250px;
+  left:260px;
+  width: 85%;
+  height: 97%;
+  border: 3px solid #264B8D;
+  color:lightblue;
+}

@@ -1,0 +1,110 @@
+<html>
+ <head>
+  <title>INTRODUCTION TO WEB TECHNOLOGY</title>
+ </head>
+<style>
+#SECTION1,#SECTION2,#SECTION3,#SECTION4 {
+font-size:20px;
+color: black;
+padding: 40px;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+ <body bgcolor="lightblue">
+<center>
+  <h1 style="color:blue;">INTRODUCTION TO WEB TECHNOLOGY</h1><br>
+  <BUTTON class="button"><a href="#SECTION1">Client/Server concepts</a></BUTTON>
+  <BUTTON class="button"><a href="#SECTION2">Components of Web Application</a></BUTTON>
+  <BUTTON class="button"><a href="#SECTION3">Types of
+Web Content</a></BUTTON>
+  <BUTTON class="button"><a href="#SECTION4"> Overview of HTTP</a></BUTTON>
+</center>
+
+<br><br>
+<h2 style="color:darkgreen;">Client/Server concepts</h2>
+<p id="SECTION1">
+What is client-server?<br>
+Client-server is a relationship in which one program, the client, requests a service or resource from another program, the server. The label client-server was previously used to distinguish distributed computing by PCs from the monolithic, centralized computing model used by mainframes.<br><br>
+
+Today, computer transactions in which the server fulfills a request made by a client are very common. The client-server model has become one of the central ideas of network computing. In this context, the client establishes a connection to the server over a LAN or WAN, such as the internet.<br><br>
+
+Once the server fulfils the client's request, the connection terminates. Because multiple client programs share the services of the same server program, a special server called a daemon might activate to await client requests.<br><br>
+
+In the early days of the internet, most network traffic traveled through what is known as north-south traffic. This is when data moves between remote clients that request web content and data center servers that provide the content. Today, with the maturity of virtualization and cloud computing, network traffic is more likely to flow server-to-server -- a pattern known as east-west traffic.<br><br>
+</p>
+<center><img src="client_and_server_requests_and_responses-f.png" height=400px width=600px ></center>
+
+
+<br><br>
+<h2 style="color:darkgreen;">Components of Web Application</h2>
+<p id="SECTION2">
+All web-based database applications have three primary components: A web browser (or client), a web application server, and a database server.<br><br>
+
+Web-based database applications rely on a database server, which provides the data for the application. The database server sometimes also provides business logic in the form of stored procedures. Stored procedures can offer significant performance advantages, especially in a multi-tiered architecture. In addition to database servers, other enterprise information system components include IMS databases, IBM® MQ messages, and CICS® records.<br><br>
+
+The clients handle the presentation logic, which controls the way in which users interact with the application. In some cases, the client validates user-provided input. Web applications sometimes integrate Java™ applets into the client-side logic to improve the presentation layer.<br><br>
+
+<b><u>Applet</b></u><br>
+A Java program that is part of a Hypertext Markup Language (HTML) page. (HTML is the standard method for presenting web data to users.) Applets work with Java-enabled browsers, such as Microsoft Internet Explorer; they are loaded when the HTML page is processed.
+Web application servers manage the business logic. The business logic, typically written in Java, supports multitiered applications. The web application server can manage requests from a variety of remote clients. The web application layer might include JavaServer Pages (JSP) files, Java servlets, Enterprise JavaBeans (EJB) components, or web services.<br><br>
+
+<b><u>JSP</b></u><br>
+A technology that provides a consistent way to extend web server functionality and create dynamic web content. The web applications that you develop with JSP technology are server and platform independent.<br><br>
+<b><u>Serverlet</b></u><br>
+A Java program that responds to client requests and generates responses dynamically.<br><br>
+<b><u>EJB</b></u><br>
+A component architecture for building distributed applications with the Java programming model. Server transactional components are reusable and provide portability across application servers.<br><br>
+<b><u>Web </b></u><br>
+Self-contained, modular applications that provide an interface between the provider and the consumer of application resources. You can read more about web services later in this information.<br><br>
+</p>
+<center><img src="1_hxi_TdLLxUuhp0rk6_p4qA.png" height=400px width=600px ></center>
+
+
+<br><br>
+<h2 style="color:darkgreen;">Types of Web Content</h2>
+<p id="SECTION3">
+Web content is the text, visual or audio content that is made available online and user encountered as part of the online usage and experience on websites. It may include text, images, sounds and audio, online videos, among other items placed within web pages.<br><br>
+
+In the book Information Architecture for the World Wide Web, Lou Rosenfeld and Peter Morville wrote, "We define content broadly as 'the stuff in your website.' Web content may include webpage document pages, information, software data and applications, e-services, images, audio and video files, personal Web pages, archived e-mail messages stored on email servers, and more. And we include future web content as well as present web content roadmap.<br><br>
+</p>
+<center><img src="Internet_Key_Layers.png" height=400px width=600px ></center>
+
+
+<br><br>
+<h2 style="color:darkgreen;">Overview of HTTP</h2>
+<p id="SECTION4">
+The Hypertext Transfer Protocol (HTTP) is an application-level protocol for distributed, collaborative, hypermedia information systems. This is the foundation for data communication for the World Wide Web (i.e. internet) since 1990. HTTP is a generic and stateless protocol which can be used for other purposes as well using extensions of its request methods, error codes, and headers.<br><br>
+
+Basically, HTTP is a TCP/IP based communication protocol, that is used to deliver data (HTML files, image files, query results, etc.) on the World Wide Web. The default port is TCP 80, but other ports can be used as well. It provides a standardized way for computers to communicate with each other. HTTP specification specifies how clients' request data will be constructed and sent to the server, and how the servers respond to these requests.<br><br>
+
+Basic Features<br><br>
+There are three basic features that make HTTP a simple but powerful protocol:<br><br>
+
+HTTP is connectionless: The HTTP client, i.e., a browser initiates an HTTP request and after a request is made, the client waits for the response. The server processes the request and sends a response back after which client disconnect the connection. So client and server knows about each other during current request and response only. Further requests are made on new connection like client and server are new to each other.<br><br>
+
+HTTP is media independent: It means, any type of data can be sent by HTTP as long as both the client and the server know how to handle the data content. It is required for the client as well as the server to specify the content type using appropriate MIME-type.<br><br>
+
+HTTP is stateless: As mentioned above, HTTP is connectionless and it is a direct result of HTTP being a stateless protocol. The server and client are aware of each other only during a current request. Afterwards, both of them forget about each other. Due to this nature of the protocol, neither the client nor the browser can retain information between different requests across the web pages.<br><br>
+</p>
+<center><img src="cgiarch.gif" height=400px width=600px ></center>
+
+
+</body>
+</html>
+
+
+
+
+
