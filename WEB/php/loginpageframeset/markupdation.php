@@ -2,13 +2,13 @@
 include 'conn.php';
 ?>
 <html>
-<head><title>MARKS</title></head>
+<head><title>MARK UPDATION</title></head>
 <body>
-<form action='markupdationdisplay.php' method='post'>
+<form action='markdisplay.php' method='post'>
 <center>
 <table border=1px padding=40px width=600px>
 <tr rowspan=2>
-<td colspan=2><center><h1>MARKS</h1></center></td></tr>
+<td colspan=2><center><h1>MARK UPDATION</h1></center></td></tr>
 
 
 
@@ -35,17 +35,6 @@ echo "<option>".$row['ktuid'] . "<br></option>";
 
 
 
-
-
-<tr>
-<td width=250px>SEMESTER</td>
-<td><input type='text' name='semester'></td>
-</tr>
-
-
-
-
-
 <tr>
 <td width=250px>SUBJECT</td>
 <td>
@@ -68,21 +57,8 @@ echo "<option>".$row['subject'] . "<br></option>";
 
 
 
-
 <tr>
-<td width=250px>SCORES</td>
-<td>
-FIRST SERIES <input type='text' name='series1'>
-SECOND SERIES <input type='text' name='series2'>
-ASSIGNMENT <input type='text' name='assignment'>
-ATTENDANCE <input type='text' name='attendance'>
-</td>
-</tr>
-
-
-
-<tr>
-<td colspan=2><center><input type='submit' value='Update'></center></td>
+<td colspan=2><center><input type='submit' value='OK'></center></td>
 </tr>
 </table>
 </center>

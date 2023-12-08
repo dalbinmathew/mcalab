@@ -3,7 +3,6 @@ include 'conn.php';
 if ($_POST)
 {
 $ktuid=$_POST['ktuid'];
-$semester=$_POST['semester'];
 $subject=$_POST['subject'];
 $series1=$_POST['series1'];
 $series2=$_POST['series2'];
@@ -12,7 +11,7 @@ $attendance=$_POST['attendance'];
 
 if($con)
 {
-$up="update marks set series1='$series1', series2='$series2', assignment='$assignment', attendance='$attendance' where ktuid='$ktuid' AND subject='$subject'";
+$up="update marks set series1='$series1', series2='$series2', assignment='$assignment', attendance='$attendance' where (ktuid='$ktuid' AND subject='$subject')";
 $upq=mysqli_query($con,$up);
 if($upq)
 {

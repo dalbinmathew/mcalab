@@ -27,7 +27,6 @@ $res="Registered Successfully!";
 <h2><?php
 echo "$res";
 ?></h2>
-<a href='login'>Go to login page</a>
 </center>
 </body>
 </html>
