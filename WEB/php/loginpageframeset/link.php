@@ -6,7 +6,9 @@ $username=$_POST['username'];
 $password=$_POST['password'];
 if($con)
 {
-$sq="select * from userdetails where username='$username' and password='$password'";
+    if ($username == 'admin' AND $password =='admin')
+    {
+$sq="select * from userdetails where username='admin' and password='admin'";
 $q=mysqli_query($con,$sq);
 if(mysqli_num_rows($q))
 {
@@ -18,10 +20,93 @@ echo "<frame name='nav' src='nav.php'/>";
 echo "<frame name='main' src='welcome.php'/>";
 echo "</frameset>";
 }
+    }
+
+
 else
 {
-echo"Invalid username or password<br><br>";
+$sz = "SELECT userdetails.*, studentregistration.ktuid FROM userdetails JOIN studentregistration ON userdetails.name = studentregistration.name WHERE userdetails.username='$username' AND userdetails.password='$password'";
+$qu=mysqli_query($con,$sz);
+if(mysqli_num_rows($qu))
+{
+$row = mysqli_fetch_assoc($qu);
+$name = $row['name'];
+$ktuid = $row['ktuid'];
+echo "<html>
+<head><title>STUDENT LOGIN</title></head>
+<body>
+<form action='' method='post'>
+<center>
+<table border=1px padding=40px width=600px>
+<tr rowspan=2>
+<td colspan=2><center><h1>YOUR MARKS</h1></center></td></tr>
+
+<tr>
+<td width=250px>NAME</td>
+<td>";
+$sql = "SELECT * FROM studentregistration WHERE name = (SELECT name FROM userdetails WHERE username = '$username')";
+$result = mysqli_query($con, $sql);
+if (mysqli_num_rows($result) > 0) {
+  $data = mysqli_fetch_assoc($result);
+
+echo "<input type='text' name='name' readonly value=".$name.">";
+}
+
+ echo " </td>
+</tr>
+
+<tr>
+<td width=250px>KTU-ID</td>
+<td>";
+ echo "<input type='text' name='ktuid' readonly value=".$ktuid.">";
+
+ echo "</td>
+</tr>
+
+<tr>
+<td width=250px>SCORES</td>
+<td><table> 
+<tr>
+<th>SUBJECT</th>
+<th>FIRST SERIES</th>
+<th>SECOND SERIES</th>
+<th>ASSIGNMENT</th>
+<th>ATTENDANCE</th></tr>";
+$s = "SELECT * FROM marks WHERE ktuid = '$ktuid'";
+$q=mysqli_query($con,$s);
+if(mysqli_num_rows($q))
+{
+while($row = mysqli_fetch_assoc($q)) 
+{
+
+echo"<tr>";
+echo"<td><input type='text' name='subject' readonly value=".$row['subject']."></td>";
+echo"<td><input type='text' name='series1' readonly value=".$row['series1']."></td>";
+echo"<td><input type='text' name='series2' readonly value=".$row['series2']."></td>";
+echo"<td><input type='text' name='assignment' readonly value=".$row['assignment']."></td>";
+echo"<td><input type='text' name='attendance' readonly value=".$row['attendance']."></td>";
+echo"</tr>";
+}
+}
+
+echo"
+</table>
+</td>
+</tr>
+</table>
+</center>
+</form>
+</body>
+</html>";
+}
+
+else
+{
+echo "<center>";
+echo"<h2>Invalid username or password</h2><br><br>";
 echo"<a href='signup.php'>Sign-Up</a>";
+echo"</center>";
+}
 }
 }
 }

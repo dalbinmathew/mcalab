@@ -15,7 +15,7 @@ $up="update marks set series1='$series1', series2='$series2', assignment='$assig
 $upq=mysqli_query($con,$up);
 if($upq)
 {
-$res="Marks updated Succesfully";
+$res="Marks Updated Succesfully";
 }
 }
 }

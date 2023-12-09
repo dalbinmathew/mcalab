@@ -8,27 +8,40 @@ $phone=$_POST['phone'];
 $email=$_POST['email'];
 $username=$_POST['username'];
 $password=$_POST['password'];
-
+$password2=$_POST['password2'];
 if($con)
 {
+    if($password == $password2)
+    {
 $rq="insert into userdetails values('$name','$age','$email','$phone','$username','$password')";
 $rs=mysqli_query($con,$rq);
 if($rs)
 {
 $res="Account created!";
 }
+    }
+else{
+    $res2="Passwords are not same!";
+}
 }
 }
 ?>
 
 <html>
-<head><title>Account created</title></head>
+<head><title>Account status</title></head>
 <body>
 <center>
 <h2><?php
-echo "$res";
+if($password == $password2)
+{
+echo "$res <br><br><br>";
+echo "<a href='login.php'>go to login page</a>";
+}
+else{
+    echo "$res2";
+}
 ?></h2>
-<a href="login.php">go to login page</a>
+
 </center>
 </body>
 </html>
