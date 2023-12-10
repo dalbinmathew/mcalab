@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conn.php';
 if ($_POST)
 {
@@ -8,6 +9,7 @@ if($con)
 {
     if ($username == 'admin' AND $password =='admin')
     {
+      $_SESSION['username'] = "$username";
 $sq="select * from userdetails where username='admin' and password='admin'";
 $q=mysqli_query($con,$sq);
 if(mysqli_num_rows($q))
@@ -102,6 +104,8 @@ echo"
 </td>
 </tr>
 </table>
+<br><br>
+<button><a href='login.php'>LOG-OUT</a></button>
 </center>
 </form>
 </body>
