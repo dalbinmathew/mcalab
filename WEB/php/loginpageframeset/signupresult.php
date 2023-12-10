@@ -2,7 +2,8 @@
 include 'conn.php';
 if ($_POST)
 {
-$name=$_POST['name'];
+$fname=$_POST['fname'];
+$lname=$_POST['lname'];
 $age=$_POST['age'];
 $phone=$_POST['phone'];
 $email=$_POST['email'];
@@ -13,7 +14,7 @@ if($con)
 {
     if($password == $password2)
     {
-$rq="insert into userdetails values('$name','$age','$email','$phone','$username','$password')";
+$rq="insert into userdetails values('$fname','$lname','$age','$email','$phone','$username','$password')";
 $rs=mysqli_query($con,$rq);
 if($rs)
 {

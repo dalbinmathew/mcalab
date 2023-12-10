@@ -3,6 +3,8 @@ include 'conn.php';
 if ($_POST)
 {
 $ktuid=$_POST['ktuid'];
+$fname=$_POST['fname'];
+$lname=$_POST['lname'];
 $semester=$_POST['semester'];
 $subject=$_POST['subject'];
 $series1=$_POST['series1'];
@@ -12,7 +14,7 @@ $attendance=$_POST['attendance'];
 
 if($con)
 {
-$rq="insert into marks values('$ktuid','$semester','$subject','$series1','$series2','$assignment','$attendance')";
+$rq="insert into marks values('$ktuid','$fname','$lname','$semester','$subject','$series1','$series2','$assignment','$attendance')";
 $rs=mysqli_query($con,$rq);
 if($rs)
 {

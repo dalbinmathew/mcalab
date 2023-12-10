@@ -2,7 +2,8 @@
 <head><title>Sign-Up</title></head>
 <body>
 <form action='signupresult.php' method='post'><center>
-NAME: <input type='text' name='name'><br><br>
+FIRST NAME: <input type='text' name='fname'><br><br>
+LAST NAME: <input type='text' name='lname'><br><br>
 AGE: <input type='text' name='age'><br><br>
 PHONE NUMBER: <input type='text' name='phone'><br><br>
 EMAIL: <input type='text' name='email'><br><br>

@@ -8,10 +8,14 @@
 <td colspan=2><center><h1>Registration Form</h1></center></td></tr>
 
 <tr>
-<td width=250px>NAME</td>
-<td><input type='text' name='name'></td>
+<td width=250px>FIRST NAME</td>
+<td><input type='text' name='fname'></td>
 </tr>
 
+<tr>
+<td width=250px>LAST NAME</td>
+<td><input type='text' name='lname'></td>
+</tr>
 
 <tr>
 <td width=250px>KTU-ID</td>
@@ -30,9 +34,9 @@
 
 <tr>
 <td width=250px>GENDER</td>
-<td><input type='radio' name='gender' value='male'>MALE</input><br>
-<input type='radio' name='gender' value='female'>FEMALE</input><br>
-<input type='radio' name='gender' value='other'>OTHER</input></td>
+<td><input type='radio' name='gender' value='MALE'>MALE</input><br>
+<input type='radio' name='gender' value='FEMALE'>FEMALE</input><br>
+<input type='radio' name='gender' value='OTHER'>OTHER</input></td>
 </tr>
 
 

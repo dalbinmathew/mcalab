@@ -25,12 +25,13 @@ echo "</frameset>";
 
 else
 {
-$sz = "SELECT userdetails.*, studentregistration.ktuid FROM userdetails JOIN studentregistration ON userdetails.name = studentregistration.name WHERE userdetails.username='$username' AND userdetails.password='$password'";
+$sz = "SELECT userdetails.*, studentregistration.ktuid FROM userdetails JOIN studentregistration ON userdetails.fname = studentregistration.fname AND userdetails.lname = studentregistration.lname WHERE userdetails.username='$username' AND userdetails.password='$password'";
 $qu=mysqli_query($con,$sz);
 if(mysqli_num_rows($qu))
 {
 $row = mysqli_fetch_assoc($qu);
-$name = $row['name'];
+$fname = $row['fname'];
+$lname = $row['lname'];
 $ktuid = $row['ktuid'];
 echo "<html>
 <head><title>STUDENT LOGIN</title></head>
@@ -42,21 +43,28 @@ echo "<html>
 <td colspan=2><center><h1>YOUR MARKS</h1></center></td></tr>
 
 <tr>
-<td width=250px>NAME</td>
+<td width=400px>FIRST NAME</td>
 <td>";
-$sql = "SELECT * FROM studentregistration WHERE name = (SELECT name FROM userdetails WHERE username = '$username')";
+$sql = "SELECT * FROM studentregistration WHERE fname = (SELECT fname FROM userdetails WHERE username = '$username') AND lname = (SELECT lname FROM userdetails WHERE username = '$username')" ;
 $result = mysqli_query($con, $sql);
 if (mysqli_num_rows($result) > 0) {
   $data = mysqli_fetch_assoc($result);
 
-echo "<input type='text' name='name' readonly value=".$name.">";
+echo "<input type='text' name='fname' readonly value=".$fname.">";
 }
 
  echo " </td>
 </tr>
 
 <tr>
-<td width=250px>KTU-ID</td>
+<td width=400px>LAST NAME</td>
+<td>";
+echo "<input type='text' name='lname' readonly value=".$lname.">";
+echo " </td>
+</tr>
+
+<tr>
+<td width=400px>KTU-ID</td>
 <td>";
  echo "<input type='text' name='ktuid' readonly value=".$ktuid.">";
 
@@ -64,7 +72,7 @@ echo "<input type='text' name='name' readonly value=".$name.">";
 </tr>
 
 <tr>
-<td width=250px>SCORES</td>
+<td width=400px>SCORES</td>
 <td><table> 
 <tr>
 <th>SUBJECT</th>

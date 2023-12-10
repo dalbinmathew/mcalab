@@ -20,6 +20,37 @@ $subject=$_POST['subject'];
  </td>
 </tr>
 
+<?php
+$query = "SELECT * FROM studentregistration where ktuid='$ktuid'";
+$result = mysqli_query($con, $query);
+if (mysqli_num_rows($result) > 0) 
+{
+while ($row = mysqli_fetch_assoc($result)) 
+{
+echo" 
+<tr>
+<td width=250px>FIRST NAME</td>
+<td>
+<input type='text' name='fname' readonly value=".$row['fname'].">
+</td>
+</tr>
+
+<tr>
+<td width=250px>LAST NAME</td>
+<td>
+<input type='text' name='lname' readonly value=".$row['lname'].">
+</td>
+</tr>
+
+<tr>
+<td width=250px>SEMESTER</td>
+<td><input type='text' name='semester' readonly value=".$row['semester'].">
+</td>
+</tr>";
+}
+}
+?>
+
 <tr>
 <td width=250px>SUBJECT</td>
 <td> <?php
