@@ -41,7 +41,7 @@ echo "<option>".$row['ktuid'] . "<br></option>";
 <select name="subject">
 <option value="">Select an option</option>
 <?php
-$query2 = "SELECT subject FROM subjects";
+$query2 = "SELECT subject FROM subjects INNER JOIN studentregistration ON subjects.semester = studentregistration.semester WHERE studentregistration.ktuid='$ktuid'";
 $result2 = mysqli_query($con, $query2);
 if (mysqli_num_rows($result2) > 0) 
 {
