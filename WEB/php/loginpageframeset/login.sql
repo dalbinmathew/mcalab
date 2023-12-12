@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 10, 2023 at 11:36 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost
+-- Generation Time: Dec 12, 2023 at 05:52 PM
+-- Server version: 5.7.33-0ubuntu0.16.04.1
+-- PHP Version: 7.0.33-0ubuntu0.16.04.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -35,19 +34,21 @@ CREATE TABLE `marks` (
   `subject` varchar(20) NOT NULL,
   `series1` varchar(3) NOT NULL,
   `series2` varchar(3) NOT NULL,
-  `assignment` varchar(3) NOT NULL,
-  `attendance` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `assignment1` varchar(3) NOT NULL,
+  `assignment2` varchar(3) NOT NULL,
+  `attendance` varchar(4) NOT NULL,
+  `internal` varchar(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `marks`
 --
 
-INSERT INTO `marks` (`ktuid`, `fname`, `lname`, `semester`, `subject`, `series1`, `series2`, `assignment`, `attendance`) VALUES
-('TVE23MCA-2016', 'Anandakrishnan', 'A', 'S1', 'ADS', '49', '47', '10', '15'),
-('TVE23MCA-2016', 'Anandakrishnan', 'A', 'S1', 'MATHS', '49', '46', '10', '17'),
-('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'DFCA', '46', '40', '10', '15'),
-('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'MATHS', '50', '50', '10', '14');
+INSERT INTO `marks` (`ktuid`, `fname`, `lname`, `semester`, `subject`, `series1`, `series2`, `assignment1`, `assignment2`, `attendance`, `internal`) VALUES
+('CET22MCA-2018', 'Pranav', 'P', 'S2', 'DAA', '40', '40', '10', '10', '88', '33'),
+('TVE23MCA-2016', 'Anandakrishnan', 'A', 'S1', 'MATHS', '18', '22', '7', '5', '65', '14'),
+('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'DFCA', '45', '40', '12', '12', '89', '36'),
+('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'MATHS', '48', '47', '12', '12', '99', '39');
 
 -- --------------------------------------------------------
 
@@ -62,13 +63,14 @@ CREATE TABLE `studentregistration` (
   `semester` varchar(2) NOT NULL,
   `rollno` varchar(3) NOT NULL,
   `gender` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `studentregistration`
 --
 
 INSERT INTO `studentregistration` (`fname`, `lname`, `ktuid`, `semester`, `rollno`, `gender`) VALUES
+('Pranav', 'P', 'CET22MCA-2018', 'S2', '18', 'MALE'),
 ('Anandakrishnan', 'A', 'TVE23MCA-2016', 'S1', '16', 'MALE'),
 ('Dalbin', 'Mathew', 'TVE23MCA-2024', 'S1', '24', 'MALE');
 
@@ -82,7 +84,7 @@ CREATE TABLE `subjects` (
   `subject` varchar(20) NOT NULL,
   `subjectid` varchar(10) NOT NULL,
   `semester` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `subjects`
@@ -109,7 +111,7 @@ CREATE TABLE `userdetails` (
   `phone` varchar(13) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `userdetails`
@@ -147,7 +149,6 @@ ALTER TABLE `subjects`
 --
 ALTER TABLE `userdetails`
   ADD PRIMARY KEY (`username`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

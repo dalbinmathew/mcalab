@@ -22,10 +22,6 @@
 <td><input type='text' name='ktuid'></td>
 </tr>
 
-<tr>
-<td width=250px>SEMESTER</td>
-<td><input type='text' name='semester'></td>
-</tr>
 
 <tr>
 <td width=250px>ROLL NO</td>

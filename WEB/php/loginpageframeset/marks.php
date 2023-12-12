@@ -8,7 +8,7 @@ include 'conn.php';
 <center>
 <table border=1px padding=40px width=600px>
 <tr rowspan=2>
-<td colspan=2><center><h1>MARKS</h1></center></td></tr>
+<td colspan=2><center><h1>UPLOAD MARKS</h1></center></td></tr>
 
 
 
@@ -30,6 +30,20 @@ echo "<option>".$row['ktuid'] . "<br></option>";
 ?>
 </select>
 </td>
+</tr>
+
+<tr>
+  <td width=250px>SEMESTER</td>
+  <td>
+    <select name="semester">
+      <option>Select an option</option>
+      <?php
+        for ($i = 1; $i <= 4; $i++) {
+          echo "<option>S".$i."</option>";
+        }
+      ?>
+    </select>
+  </td>
 </tr>
 
 

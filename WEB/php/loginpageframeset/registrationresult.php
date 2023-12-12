@@ -5,13 +5,12 @@ if ($_POST)
 $fname=$_POST['fname'];
 $lname=$_POST['lname'];
 $ktuid=$_POST['ktuid'];
-$semester=$_POST['semester'];
 $rollno=$_POST['rollno'];
 $gender=$_POST['gender'];
 
 if($con)
 {
-$rq="insert into studentregistration values('$fname','$lname','$ktuid','$semester','$rollno','$gender')";
+$rq="insert into studentregistration values('$fname','$lname','$ktuid','$rollno','$gender')";
 $rs=mysqli_query($con,$rq);
 if($rs)
 {

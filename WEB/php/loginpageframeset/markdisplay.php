@@ -40,11 +40,20 @@ echo"
 <td>
 <input type='text' name='lname' readonly value=".$row['lname'].">
 </td>
-</tr>
+</tr>";
+}
+}
 
+$query2 = "SELECT semester FROM subjects where subject='$subject'";
+$result2 = mysqli_query($con, $query2);
+if (mysqli_num_rows($result2) > 0) 
+{
+while ($row2 = mysqli_fetch_assoc($result2)) 
+{
+echo" 
 <tr>
 <td width=250px>SEMESTER</td>
-<td><input type='text' name='semester' readonly value=".$row['semester'].">
+<td><input type='text' name='semester' readonly value=".$row2['semester'].">
 </td>
 </tr>";
 }
@@ -56,7 +65,7 @@ echo"
 <td> <?php
  echo "<input type='text' name='subject' readonly value=".$subject.">";
  ?>
- </td>
+</td>
 </tr>
 
 <tr>
@@ -71,8 +80,9 @@ while($row = mysqli_fetch_assoc($q))
 echo"<td>";
 echo"FIRST SERIES:<input type='text' name='series1' value=".$row["series1"]."> <br>";
 echo"SECOND SERIES:<input type='text' name='series2' value=".$row["series2"]."> <br>";
-echo"ASSIGNMENT:<input type='text' name='assignment' value=".$row["assignment"]."> <br>";
-echo"ATTENDANCE:<input type='text' name='attendance' value=".$row["attendance"]."> <br>";
+echo"ASSIGNMENT 1:<input type='text' name='assignment1' value=".$row["assignment1"]."> <br>";
+echo"ASSIGNMENT 2:<input type='text' name='assignment2' value=".$row["assignment2"]."> <br>";
+echo"ATTENDANCE %:<input type='text' name='attendance' value=".$row["attendance"]."> <br>";
 echo"</td>";
 }
 }

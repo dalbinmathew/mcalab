@@ -3,6 +3,7 @@ include 'conn.php';
 if ($_POST)
 {
 $ktuid=$_POST['ktuid'];
+$semester=$_POST['semester'];
 }
 ?>
 <html>
@@ -47,7 +48,7 @@ echo"
 
 <tr>
 <td width=250px>SEMESTER</td>
-<td><input type='text' name='semester' readonly value=".$row['semester'].">
+<td><input type='text' name='semester' readonly value='$semester'>
 </td>
 </tr>
 
@@ -56,8 +57,7 @@ echo"
 <td>
 <select name='subject'>
 <option value=''>Select an option</option>";
-$semester = $row['semester'];
-$query2 = "SELECT subject FROM subjects INNER JOIN studentregistration ON subjects.semester = studentregistration.semester WHERE studentregistration.ktuid='$ktuid'";
+$query2 = "SELECT subject FROM subjects where semester='$semester'";
 $result2 = mysqli_query($con, $query2);
 if (mysqli_num_rows($result2) > 0) 
 {
@@ -80,8 +80,9 @@ echo"</select>
 <td>
 FIRST SERIES <input type='text' name='series1'>
 SECOND SERIES <input type='text' name='series2'>
-ASSIGNMENT <input type='text' name='assignment'>
-ATTENDANCE <input type='text' name='attendance'>
+ASSIGNMENT 1 <input type='text' name='assignment1'>
+ASSIGNMENT 2 <input type='text' name='assignment2'>
+ATTENDANCE % <input type='text' name='attendance'>
 </td>
 </tr>
 
