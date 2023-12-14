@@ -38,14 +38,14 @@ $ktuid = $row['ktuid'];
 echo "<html>
 <head><title>STUDENT LOGIN</title></head>
 <body>
-<form action='' method='post'>
+<form action='linkresult.php' method='post'>
 <center>
 <table border=1px padding=40px width=600px>
 <tr rowspan=2>
-<td colspan=3><center><h1>YOUR MARKS</h1></center></td></tr>
+<td colspan=2><center><h1>CHECK YOUR MARKS</h1></center></td></tr>
 
 <tr>
-<td colspan=2 width=400px>FIRST NAME</td>
+<td width=400px>FIRST NAME</td>
 <td>";
 $sql = "SELECT * FROM studentregistration WHERE fname = (SELECT fname FROM userdetails WHERE username = '$username') AND lname = (SELECT lname FROM userdetails WHERE username = '$username')" ;
 $result = mysqli_query($con, $sql);
@@ -59,71 +59,38 @@ echo "<input type='text' name='fname' readonly value=".$fname.">";
 </tr>
 
 <tr>
-<td colspan=2 width=400px>LAST NAME</td>
+<td width=400px>LAST NAME</td>
 <td>";
 echo "<input type='text' name='lname' readonly value=".$lname.">";
 echo " </td>
 </tr>
 
 <tr>
-<td colspan=2 width=400px>KTU-ID</td>
+<td width=400px>KTU-ID</td>
 <td>";
  echo "<input type='text' name='ktuid' readonly value=".$ktuid.">";
-
- echo "</td>
+echo "</td>
 </tr>
 
 <tr>
-<td width=400px>SCORES</td>
-
-
-<td>
-<table>
-<tr>
-<th width=400px>SEMESTER</th>
-</tr>";
-$s = "SELECT * FROM marks WHERE ktuid = '$ktuid'";
-$q=mysqli_query($con,$s);
-if(mysqli_num_rows($q))
-{
-while($row = mysqli_fetch_assoc($q)) 
-{
-echo"<td><input type='text' name='semester' readonly value=".$row['semester']."> </td>
-</tr>";
-echo"</table>
-</td>
-<td>
-
-<table> 
-<tr>
-<th>SUBJECT</th>
-<th>FIRST SERIES</th>
-<th>SECOND SERIES</th>
-<th>ASSIGNMENT 1</th>
-<th>ASSIGNMENT 2</th>
-<th>ATTENDANCE %</th>
-<th>TOTAL INTERNAL MARKS</th></tr>";
-
-
-echo"<tr>";
-echo"<td><input type='text' name='subject' readonly value=".$row['subject']."></td>";
-echo"<td><input type='text' name='series1' readonly value=".$row['series1']."></td>";
-echo"<td><input type='text' name='series2' readonly value=".$row['series2']."></td>";
-echo"<td><input type='text' name='assignment1' readonly value=".$row['assignment1']."></td>";
-echo"<td><input type='text' name='assignment2' readonly value=".$row['assignment2']."></td>";
-echo"<td><input type='text' name='attendance' readonly value=".$row['attendance']."></td>";
-echo"<td><input type='text' name='internal' readonly value=".$row['internal']."></td>";
-echo"</tr>";
-}
-}
-
-echo"
-</table>
-</td>
+  <td width=250px>SEMESTER</td>
+  <td>
+    <select name='semester'>
+      <option>Select an option</option>";
+        for ($i = 1; $i <= 4; $i++) {
+          echo "<option>S".$i."</option>";
+        }
+    echo"</select>
+  </td>
 </tr>
+
+
 </table>
 <br><br>
+<input type='submit' value='Check Your Marks'>
+<br><br>
 <button><a href='login.php'>LOG-OUT</a></button>
+
 </center>
 </form>
 </body>

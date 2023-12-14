@@ -25,15 +25,23 @@ switch (true) {
     break;
   default:
 }
-$internal= (($series1 + $series2) * (0.2)) + (($assignment1 + $assignment2)/(2)) + $at; 
+
 if($con)
 {
-$up="update marks set series1='$series1', series2='$series2', assignment1='$assignment1', assignment2='$assignment2',  attendance='$attendance',internal='$internal' where (ktuid='$ktuid' AND subject='$subject')";
+  if($attendance >= 75)
+  {
+    $internal= (($series1 + $series2) * (0.2)) + (($assignment1 + $assignment2)/(2)) + $at; 
+$up="UPDATE marks SET series1='$series1', series2='$series2', assignment1='$assignment1', assignment2='$assignment2',  attendance='$attendance',internal='$internal' WHERE (ktuid='$ktuid' AND subject='$subject')";
+  }
+  else{
+    $internal = "NOT ELIGIBLE FOR EXAMINATIONS";
+        $up = "UPDATE marks SET series1='$series1', series2='$series2', assignment1='$assignment1', assignment2='$assignment2', attendance='$attendance', internal='$internal' WHERE (ktuid='$ktuid' AND subject='$subject')";
+  }
 $upq=mysqli_query($con,$up);
 if($upq)
 {
 $res="Marks Updated Succesfully";
-}
+} 
 }
 }
 ?>

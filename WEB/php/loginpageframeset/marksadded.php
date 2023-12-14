@@ -28,15 +28,23 @@ switch (true) {
     break;
   default:
 }
-$internal= (($series1 + $series2) * (0.2)) + (($assignment1 + $assignment2)/(2)) + $at;
+ 
 if($con)
 {
-$rq="insert into marks values('$ktuid','$fname','$lname','$semester','$subject','$series1','$series2','$assignment1','$assignment2','$attendance','$internal')";
-$rs=mysqli_query($con,$rq);
-if($rs)
+  if($attendance >= 75)
+  {
+    $internal= (($series1 + $series2) * (0.2)) + (($assignment1 + $assignment2)/(2)) + $at;
+$up="INSERT INTO marks VALUES('$ktuid','$fname','$lname','$semester','$subject','$series1','$series2','$assignment1','$assignment2','$attendance','$internal')";
+  }
+  else{
+    $internal = "NOT_ELIGIBLE_FOR_EXAMINATIONS";
+        $up = "INSERT INTO marks VALUES('$ktuid','$fname','$lname','$semester','$subject','$series1','$series2','$assignment1','$assignment2','$attendance','$internal')";
+  }
+$upq=mysqli_query($con,$up);
+if($upq)
 {
-$res="Marks added Succesfully";
-}
+$res="Marks Added Succesfully";
+} 
 }
 }
 ?>

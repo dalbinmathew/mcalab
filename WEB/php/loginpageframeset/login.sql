@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2.1
--- http://www.phpmyadmin.net
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 12, 2023 at 05:52 PM
--- Server version: 5.7.33-0ubuntu0.16.04.1
--- PHP Version: 7.0.33-0ubuntu0.16.04.16
+-- Host: 127.0.0.1
+-- Generation Time: Dec 14, 2023 at 09:36 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -37,18 +38,21 @@ CREATE TABLE `marks` (
   `assignment1` varchar(3) NOT NULL,
   `assignment2` varchar(3) NOT NULL,
   `attendance` varchar(4) NOT NULL,
-  `internal` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `internal` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `marks`
 --
 
 INSERT INTO `marks` (`ktuid`, `fname`, `lname`, `semester`, `subject`, `series1`, `series2`, `assignment1`, `assignment2`, `attendance`, `internal`) VALUES
-('CET22MCA-2018', 'Pranav', 'P', 'S2', 'DAA', '40', '40', '10', '10', '88', '33'),
+('CET22MCA-2018', 'Pranav', 'P', 'S2', 'DAA', '46', '44', '12', '12', '88', '37'),
+('TVE22MCA-2041', 'Manu', 'Gopal', 'S2', 'DAA', '50', '50', '12', '12', '50', 'NOT ELIGIBLE FOR EXAMINATIONS'),
 ('TVE23MCA-2016', 'Anandakrishnan', 'A', 'S1', 'MATHS', '18', '22', '7', '5', '65', '14'),
+('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'ADS', '50', '40', '12', '12', '99', '38'),
+('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S2', 'DAA', '46', '44', '12', '12', '92', '38'),
 ('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'DFCA', '45', '40', '12', '12', '89', '36'),
-('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'MATHS', '48', '47', '12', '12', '99', '39');
+('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'MATHS', '10', '20', '5', '6', '60', 'NOT_ELIGIBLE_FOR_EXAMINATIONS');
 
 -- --------------------------------------------------------
 
@@ -60,19 +64,19 @@ CREATE TABLE `studentregistration` (
   `fname` varchar(20) NOT NULL,
   `lname` varchar(20) NOT NULL,
   `ktuid` varchar(15) NOT NULL,
-  `semester` varchar(2) NOT NULL,
   `rollno` varchar(3) NOT NULL,
   `gender` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `studentregistration`
 --
 
-INSERT INTO `studentregistration` (`fname`, `lname`, `ktuid`, `semester`, `rollno`, `gender`) VALUES
-('Pranav', 'P', 'CET22MCA-2018', 'S2', '18', 'MALE'),
-('Anandakrishnan', 'A', 'TVE23MCA-2016', 'S1', '16', 'MALE'),
-('Dalbin', 'Mathew', 'TVE23MCA-2024', 'S1', '24', 'MALE');
+INSERT INTO `studentregistration` (`fname`, `lname`, `ktuid`, `rollno`, `gender`) VALUES
+('Pranav', 'P', 'CET22MCA-2018', '18', 'MALE'),
+('Manu', 'Gopal', 'TVE22MCA-2041', '39', 'MALE'),
+('Anandakrishnan', 'A', 'TVE23MCA-2016', '16', 'MALE'),
+('Dalbin', 'Mathew', 'TVE23MCA-2024', '24', 'MALE');
 
 -- --------------------------------------------------------
 
@@ -84,7 +88,7 @@ CREATE TABLE `subjects` (
   `subject` varchar(20) NOT NULL,
   `subjectid` varchar(10) NOT NULL,
   `semester` varchar(2) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `subjects`
@@ -111,7 +115,7 @@ CREATE TABLE `userdetails` (
   `phone` varchar(13) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `userdetails`
@@ -120,7 +124,8 @@ CREATE TABLE `userdetails` (
 INSERT INTO `userdetails` (`fname`, `lname`, `age`, `email`, `phone`, `username`, `password`) VALUES
 ('admin', '', '', 'admin@cet.ac.in', '', 'admin', 'admin'),
 ('Anandakrishnan', 'A', '22', 'anandanil@gmail.com', '+919072114567', 'anandan', 'anandan'),
-('Dalbin', 'Mathew', '21', 'dalbinmathew10@gmail.com', '+919072118584', 'dalbinmathew', 'dalbinmathew');
+('Dalbin', 'Mathew', '21', 'dalbinmathew10@gmail.com', '+919072118584', 'dalbinmathew', 'dalbinmathew'),
+('Manu', 'Gopal', '21', 'manu@gmail.com', '+919633717852', 'manu', 'manu');
 
 --
 -- Indexes for dumped tables
@@ -149,6 +154,7 @@ ALTER TABLE `subjects`
 --
 ALTER TABLE `userdetails`
   ADD PRIMARY KEY (`username`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
