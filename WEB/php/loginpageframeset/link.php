@@ -100,7 +100,7 @@ echo "</td>
 else
 {
 echo "<center>";
-echo"<h2>Invalid username or password</h2><br><br>";
+echo"<h2>Invalid username or password or admin haven't yet registered your details</h2><br><br>";
 echo"<a href='signup.php'>Sign-Up</a>";
 echo"</center>";
 }

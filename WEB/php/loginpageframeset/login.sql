@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2023 at 09:36 PM
+-- Generation Time: Dec 15, 2023 at 08:02 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,7 +47,7 @@ CREATE TABLE `marks` (
 
 INSERT INTO `marks` (`ktuid`, `fname`, `lname`, `semester`, `subject`, `series1`, `series2`, `assignment1`, `assignment2`, `attendance`, `internal`) VALUES
 ('CET22MCA-2018', 'Pranav', 'P', 'S2', 'DAA', '46', '44', '12', '12', '88', '37'),
-('TVE22MCA-2041', 'Manu', 'Gopal', 'S2', 'DAA', '50', '50', '12', '12', '50', 'NOT ELIGIBLE FOR EXAMINATIONS'),
+('TVE22MCA-2041', 'Manu', 'Gopal', 'S2', 'DAA', '50', '50', '12', '12', '90', '40'),
 ('TVE23MCA-2016', 'Anandakrishnan', 'A', 'S1', 'MATHS', '18', '22', '7', '5', '65', '14'),
 ('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S1', 'ADS', '50', '40', '12', '12', '99', '38'),
 ('TVE23MCA-2024', 'Dalbin', 'Mathew', 'S2', 'DAA', '46', '44', '12', '12', '92', '38'),
@@ -76,7 +76,8 @@ INSERT INTO `studentregistration` (`fname`, `lname`, `ktuid`, `rollno`, `gender`
 ('Pranav', 'P', 'CET22MCA-2018', '18', 'MALE'),
 ('Manu', 'Gopal', 'TVE22MCA-2041', '39', 'MALE'),
 ('Anandakrishnan', 'A', 'TVE23MCA-2016', '16', 'MALE'),
-('Dalbin', 'Mathew', 'TVE23MCA-2024', '24', 'MALE');
+('Dalbin', 'Mathew', 'TVE23MCA-2024', '24', 'MALE'),
+('Deepu', 'Joseph', 'TVE23MCA-2025', '25', 'MALE');
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,9 @@ INSERT INTO `userdetails` (`fname`, `lname`, `age`, `email`, `phone`, `username`
 ('admin', '', '', 'admin@cet.ac.in', '', 'admin', 'admin'),
 ('Anandakrishnan', 'A', '22', 'anandanil@gmail.com', '+919072114567', 'anandan', 'anandan'),
 ('Dalbin', 'Mathew', '21', 'dalbinmathew10@gmail.com', '+919072118584', 'dalbinmathew', 'dalbinmathew'),
-('Manu', 'Gopal', '21', 'manu@gmail.com', '+919633717852', 'manu', 'manu');
+('Deepu', 'Joseph', '22', 'deepu@gmail.com', '+919684523172', 'deepu', 'Deepu@123'),
+('Manu', 'Gopal', '21', 'manu@gmail.com', '+919633717852', 'manu', 'manu'),
+('Sandra', 'Krishna M', '21', 'sandra@gmail.com', '+918547905246', 'sandra', 'Sandra@123');
 
 --
 -- Indexes for dumped tables
