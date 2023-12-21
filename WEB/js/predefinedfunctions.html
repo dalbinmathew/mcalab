@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PRE DEFINED FUNCTIONS</title>
+  <script>
+    function wordlength() {
+      var name, result;
+      name = document.myform.name.value;
+      result = name.length;
+      document.myform.formresult.value = result;
+    }
+function wordreplace()
+{
+var name, result, newname;
+      name = document.myform.name.value;
+      newname = prompt("Enter new name:");
+      result = name.replace(name, newname);
+      document.myform.formresult.value = result;
+}
+function worduppercase()
+{
+      var name, result;
+      name = document.myform.name.value;
+      result = name.toUpperCase();
+      document.myform.formresult.value = result;
+}
+function wordlowercase()
+{
+      var name, result;
+      name = document.myform.name.value;
+      result = name.toLowerCase();
+      document.myform.formresult.value = result;
+}
+  </script>
+</head>
+<body>
+<form name="myform">
+Enter your name: <input type="text" name="name" required><br>
+<input type="button" value="Length" onClick="wordlength()">
+<input type="button" value="Replace" onClick="wordreplace()">
+<input type="button" value="Uppercase" onClick="worduppercase()">
+<input type="button" value="Lowercase" onClick="wordlowercase()"><br>
+Result:<input type="text" name="formresult" readonly>
+</form>
+</body>
+</html>

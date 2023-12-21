@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>FLOATING POINT NUMBER CALCULATIONS</title>
+<script>
+function numsquare() {
+      var num, result;
+      num = document.myform.floatnum.value;
+      result = num * num;
+      document.myform.formresult.value = result;
+    }
+function numciel() {
+      var num, result;
+      num = document.myform.floatnum.value;
+      result = Math.ceil(num);
+      document.myform.formresult.value = result;
+    }
+function numabsolute() {
+      var num, result;
+      num = document.myform.floatnum.value;
+      result = Math.abs(num);
+      document.myform.formresult.value = result;
+    }
+function numfloor() {
+      var num, result;
+      num = document.myform.floatnum.value;
+      result = Math.floor(num);
+      document.myform.formresult.value = result;
+    }
+</script>
+</head>
+<body>
+<form name="myform">
+ENTER FLOATING POINT NUMBER: <input type="text" name="floatnum" required><br>
+<input type="button" value="Square" onClick="numsquare()">
+<input type="button" value="ciel" onClick="numciel()">
+<input type="button" value="Absolute" onClick="numabsolute()">
+<input type="button" value="Floor" onClick="numfloor()"><br>
+Result:<input type="text" name="formresult" readonly>
+</form>
+</body>
+</html>
