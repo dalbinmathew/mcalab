@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Content Change</title>
+        <script>
+            function mouseover()
+            {
+                var x = document.getElementById("cimg");
+                x.src = "2.jpg";
+                var y = document.getElementById("ctext");
+                y.innerHTML = "New Image";
+            }
+            function mouseout()
+            {
+                var x = document.getElementById("cimg");
+                x.src = "1.jpg";
+                var y = document.getElementById("ctext");
+                y.innerHTML = "Current Image";
+            }
+        </script>
+    </head>
+    <body>
+        <div onmouseover="mouseover()" onmouseout="mouseout()">
+            <img id="cimg" src="1.jpg" width="800px" height="450px">
+            <h2 id="ctext">Current Image</h2>
+        </div>
+    </body>
+</html>
