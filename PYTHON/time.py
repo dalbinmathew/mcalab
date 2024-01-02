@@ -13,7 +13,7 @@ class Time:
 		return "{:02d}:{:02d}:{:02d}".format(self.__hour, self.__minute, self.__second)
 	
 time1 = Time(10, 30, 45)
-time2 = Time(2, 15, 20)
+time2 = Time(18, 15, 20)
 
 # Calculate and print the sum of the two times
 sumtime = time1 + time2
