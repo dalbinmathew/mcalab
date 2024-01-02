@@ -1,18 +1,10 @@
 def longestword(lst):
   longest=lst[1]
   for i in lst:
-    current=i
-    if len(current)>len(longest):
-        longest=current
+    if len(i)>len(longest):
+        longest=i
   print("length of the longest word in the list is",len(longest))
   
   
-x=int(input("enter how many words you want to enter"))
-print("enter the words")
-lst=[]
-for i in range(x):
-  ele=input()
-  lst.append(ele)
-  
-  
+lst=list(map(str,input("enter the elements:").split()))
 longestword(lst)

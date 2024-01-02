@@ -58,8 +58,9 @@ void main()
 {
 printf("enter the size of the stack:\n");
 scanf("%d",&s);
-while(choice != 5)
+do
 {
+    menu:
 printf("Chose one from the below options...\n");  
 printf("\n1.Push\n2.Pop\n3.Show\n4.Peek\n5.Exit");  
 printf("\n Enter your choice \n");        
@@ -99,11 +100,7 @@ switch(choice)
 printf("do you want to continue?\n \t 1.YES\t 2.NO\n");
 scanf("%d",&o);
 if(o==1)
-continue;
-else if(o==2)
-break;
-else
-printf("invalid choice\n");
-    } 
+goto menu;
+    } while(o!=0);
 } 
  
