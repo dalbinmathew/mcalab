@@ -13,7 +13,15 @@ if($_POST)
         if($q)
         {
             echo "Order added successfully";
+            $re="SELECT * FROM book WHERE bookid='$bookid'";
+            $req=mysqli_query($con,$re);
+            if(mysqli_num_rows($req))
+            {
+                $row=mysqli_fetch_assoc($req);
+                echo "Book Details:<br> Book ID:<input type='text' readonly value=".$row['bookid'].">";
+            }
         }
     }
 }
 ?>
+
