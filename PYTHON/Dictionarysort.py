@@ -1,9 +1,11 @@
-dict={"anandan":22,"syam":23,"dalbin":20}
+dict1={"anandan":22,"syam":23,"dalbin":20}
 
-x=max(sorted(dict.values()))
+x=max(sorted(dict1.values()))
 print(x)
-for i in dict:
-    if dict[i]==x:
+for i in dict1:
+    if dict1[i]==x:
         y=i
 print(y)
-print(sorted(dict.items(), reverse=True))
+
+print(dict(sorted(dict1.items())))
+print(dict(sorted(dict1.items(), reverse=True)))

@@ -19,10 +19,10 @@ print(area(5,6,4))
 from graphics3d.cuboid import perimeter as p
 print(p(5,6,4))
 
-from graphics3d.sphere import *
-print(perimeter(6))
+from graphics3d import sphere
+print(sphere.perimeter(6))
 
-from graphics3d.sphere import area 
+from graphics3d.sphere import * 
 print(area(5))
 
 
