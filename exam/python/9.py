@@ -19,7 +19,7 @@ file  = open("demo.txt","r")
 a = []
 
 for x in file:
-    # print(x)
+    print(x)
     a.append(x.upper().strip())
 
 print(a)
