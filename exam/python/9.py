@@ -1,5 +1,5 @@
 file  = open("demo.txt","r")
-# print(file.read())
+print(file.strip())
 
 # Read only parts of the file
 
@@ -16,10 +16,10 @@ file  = open("demo.txt","r")
 
 # looping through file
 
-a = []
+# a = []
 
-for x in file:
-    print(x)
-    a.append(x.upper().strip())
+# for x in file:
+#     print(x)
+#     a.append(x.upper().strip())
 
-print(a)
+# print(a)

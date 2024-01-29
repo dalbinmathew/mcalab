@@ -1,7 +1,7 @@
 people = {2:"c",1:"d",3:"a",4:"b"}
-print(people)
+# print(people)
  # Sort by key
-print(dict(sorted(people.items())))
+# print(dict(sorted(people.values())))
 
 
  # Sort by value
