@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2024 at 01:03 PM
+-- Generation Time: Jan 29, 2024 at 03:16 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -62,9 +62,8 @@ CREATE TABLE `bookdetails` (
 --
 
 INSERT INTO `bookdetails` (`bookid`, `bookname`, `author`, `pages`) VALUES
-(1, 'Python_Basics', 'Dalbin', '500'),
-(2, 'Java_Basics', 'Jewel', '1000'),
-(3, 'CPP_Basics', 'Arun', '1500');
+(4, 'Java_Basics', 'Jewel', '1000'),
+(5, 'CPP_Basics', 'Arun', '1500');
 
 -- --------------------------------------------------------
 
@@ -117,7 +116,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `bookdetails`
 --
 ALTER TABLE `bookdetails`
-  MODIFY `bookid` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `bookid` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

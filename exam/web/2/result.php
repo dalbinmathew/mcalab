@@ -42,6 +42,10 @@ if($_POST)
         </td>
         </tr>
         </table>
+        <br>
+        <a href='search.php'>Search another Book</a>
+        <br><br>
+        <a href='register.php'>Add Books</a>
         </center>
         </body>
         </html>";

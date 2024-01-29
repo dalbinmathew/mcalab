@@ -3,9 +3,9 @@
     <body>
         <form action='result.php' method='post'>
             <center>
-            <table border=1px>
+            <table width=600px border=1px>
                 <tr rowspan=2>
-                    <td colspan=2><center>SEARCH BOOK</center></td>
+                    <td colspan=2><center><h1>SEARCH BOOK</h1></center></td>
 </tr>
 <tr>
     <td>ENTER BOOK NAME</td>
@@ -13,6 +13,8 @@
 </tr>
 <tr><td colspan=2><center><input type='submit' value='SEARCH'></center></td></tr>
 </table>
+<br>
+<a href='register.php'>Add Books</a>
 </center>
 </form>
 </body>
