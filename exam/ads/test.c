@@ -3,18 +3,20 @@
 void main()
 {
     int n;
-    printf("Enter no:of vertices: ");
-    scanf("%d", &n);
-    int A[n][n],visited[n],e=0,u,v,cost=0,min=999;
-    printf("Enter adjacency matrix: ");
-    for (int i=0; i<n; i++)
+    printf("enter the no of vertices:");
+    scanf("%d",&n);
+    int visited[n],A[n][n], e=0,min=999,cost=0,u,v;
+    printf("enter adjacency matrix:");
+    for(int i=0;i<n;i++)
     {
         visited[i]=0;
-        for(int j=0; j<n; j++)
+        for(int j=0;j<n;j++)
         {
-            scanf("%d", &A[i][j]);
+            scanf("%d",&A[i][j]);
             if(A[i][j]==0)
+            {
                 A[i][j]=999;
+            }
             if(A[i][j]<min)
             {
                 min=A[i][j];
@@ -26,7 +28,6 @@ void main()
     cost+=min;
     visited[u]=1;
     visited[v]=1;
-    printf("\nEdge: %d %d",u,v);
     e+=1;
     while(e<n-1)
     {
@@ -43,15 +44,14 @@ void main()
                         u=i;
                         v=j;
                     }
+                    
                 }
             }
         }
-        cost+=min;
-        printf("\nEdge: %d %d",u,v);
-        visited[u]=1;
-        visited[v]=1;
-        e+=1;
+    cost+=min;
+    visited[u]=1;
+    visited[v]=1;
+    e+=1;
     }
-    printf("\nmin Cost= %d",cost);
+    printf("cost:%d",cost);
 }
-
